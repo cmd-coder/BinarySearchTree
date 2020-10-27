@@ -22,6 +22,7 @@ namespace BinarySearchTree
             bst.Insert(67);
             bst.Display();
             bst.Size();
+            Console.WriteLine("The element 63 exists in the BST: " + bst.Search(63, bst));
         }
     }
 }

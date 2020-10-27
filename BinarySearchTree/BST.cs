@@ -52,15 +52,33 @@ namespace BinarySearchTree
         {
             if(Left!=null)
             {
-                //this.leftCount++;
                 Left.Display();
             }
             Console.WriteLine(NodeData);
             if (Right != null)
             {
-                //this.rightCount++;
                 Right.Display();
             }
+        }
+
+        bool flag = false;
+        public bool Search(T item, BST<T> tree)
+        {
+            if(tree==null)
+                return false;
+            if(tree.NodeData.Equals(item))
+            {
+                flag = true;
+            }
+            else if(tree.NodeData.CompareTo(item)<0)
+            {
+                Search(item, tree.Right);
+            }
+            else
+            {
+                Search(item, tree.Left);
+            }
+            return flag;
         }
 
         public void Size()
