@@ -22,6 +22,7 @@ namespace BinarySearchTree
             T currentValue = NodeData;
             if(currentValue.CompareTo(item)>0)
             {
+                leftCount++;
                 if(Left==null)
                 {
                     Left = new BST<T>(item);
@@ -33,6 +34,7 @@ namespace BinarySearchTree
             }
             else
             {
+                rightCount++;
                 if (Right == null)
                 {
                     Right = new BST<T>(item);
@@ -50,15 +52,20 @@ namespace BinarySearchTree
         {
             if(Left!=null)
             {
-                leftCount++;
+                //this.leftCount++;
                 Left.Display();
             }
             Console.WriteLine(NodeData);
-            if (Left != null)
+            if (Right != null)
             {
-                rightCount++;
+                //this.rightCount++;
                 Right.Display();
             }
+        }
+
+        public void Size()
+        {
+            Console.WriteLine("The size of the BST is: " + (1 + leftCount + rightCount));
         }
     }
 }
